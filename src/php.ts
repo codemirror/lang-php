@@ -80,20 +80,17 @@ export const phpLanguage = LRLanguage.define({
   }
 })
 
-/// Options to the [`php`](#lang-php.php) function.
-export interface PHPConfig {
-  // By default, the parser will treat content outside of `<?` and
-  // `?>` markers as HTML. You can pass a different language here to
-  // change that. Explicitly passing disables parsing of such content.
-  baseLanguage?: Language | null,
-  // By default, PHP parsing only starts at the first `<?` marker.
-  // When you set this to true, it starts immediately at the start of
-  // the document.
-  plain?: boolean,
-}
-
 /// PHP language support.
-export function php(config: PHPConfig = {}) {
+export function php(config: {
+  /// By default, the parser will treat content outside of `<?` and
+  /// `?>` markers as HTML. You can pass a different language here to
+  /// change that. Explicitly passing disables parsing of such content.
+  baseLanguage?: Language | null,
+  /// By default, PHP parsing only starts at the first `<?` marker.
+  /// When you set this to true, it starts immediately at the start of
+  /// the document.
+  plain?: boolean,
+} = {}) {
   let support = [], base: Language | undefined
   if (config.baseLanguage === null) {
   } else if (config.baseLanguage) {
