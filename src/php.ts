@@ -107,6 +107,7 @@ export function php(config: {
         parser: base!.parser,
         overlay: node => node.name == "Text"
       }
-    })
+    }),
+    top: config.plain ? "Program" : "Template"
   }), support)
 }
