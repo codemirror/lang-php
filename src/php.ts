@@ -12,8 +12,8 @@ export const phpLanguage = LRLanguage.define({
   parser: parser.configure({
     props: [
       indentNodeProp.add({
-        IfStatement: continuedIndent({except: /^\s*({|else\b)/}),
-        TryStatement: continuedIndent({except: /^\s*({|catch|finally)\b/}),
+        IfStatement: continuedIndent({except: /^\s*({|else\b|elseif\b|endif\b)/}),
+        TryStatement: continuedIndent({except: /^\s*({|catch\b|finally\b)/}),
         SwitchBody: context => {
           let after = context.textAfter, closed = /^\s*\}/.test(after), isCase = /^\s*(case|default)\b/.test(after)
           return context.baseIndent + (closed ? 0 : isCase ? 1 : 2) * context.unit
@@ -22,7 +22,7 @@ export const phpLanguage = LRLanguage.define({
         "Block EnumBody DeclarationList": delimitedIndent({closing: "}"}),
         ArrowFunction: cx => cx.baseIndent + cx.unit,
         "String BlockComment": () => -1,
-        Statement: continuedIndent({except: /^{/})
+        Statement: continuedIndent({except: /^({|end(for|foreach|switch|while)\b)/})
       }),
       foldNodeProp.add({
         "Block EnumBody DeclarationList SwitchBody ArrayExpression ValueList": foldInside,
@@ -75,7 +75,7 @@ export const phpLanguage = LRLanguage.define({
   }),
   languageData: {
     commentTokens: {block: {open: "/*", close: "*/"}, line: "//"},
-    indentOnInput: /^\s*(?:case |default:|\{|\})$/,
+    indentOnInput: /^\s*(?:case |default:|end(?:if|for(?:each)?|switch|while)|else(?:if)?|\{|\})$/,
     wordChars: "$"
   }
 })
@@ -96,7 +96,7 @@ export function php(config: {
   } else if (config.baseLanguage) {
     base = config.baseLanguage
   } else {
-    let htmlSupport = html()
+    let htmlSupport = html({matchClosingTags: false})
     support.push(htmlSupport.support)
     base = htmlSupport.language
   }
