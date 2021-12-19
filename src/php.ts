@@ -32,13 +32,12 @@ export const phpLanguage = LRLanguage.define({
       styleTags({
         "Visibility abstract final static": t.modifier,
         "for foreach while do if else elseif switch try catch finally return throw break continue default case": t.controlKeyword,
-        "endif endfor endforeach endswitch endwhile goto match": t.controlKeyword,
+        "endif endfor endforeach endswitch endwhile goto match declare enddeclare": t.controlKeyword,
         "and or xor yield unset clone instanceof insteadof": t.operatorKeyword,
-        "function fn class trait implements extends const enum global namespace trait use var": t.definitionKeyword,
-        "include include_once require require_once declare enddeclare": t.definitionKeyword,
-        "new from echo print array list as": t.keyword,
-        null: t.null,
-        Boolean: t.bool,
+        "function fn class interface trait implements extends const enum global namespace use var": t.definitionKeyword,
+        "include include_once require require_once": t.definitionKeyword,
+        "new from echo print array list as @ eval isset empty die exit __halt_compiler": t.keyword,
+        "__CLASS__  __DIR__  __FILE__  __FUNCTION__  __LINE__  __METHOD__  __NAMESPACE__  __TRAIT__": t.constant,
         VariableName: t.variableName,
         "NamespaceName/...": t.namespace,
         "NamedType/...": t.typeName,
@@ -54,6 +53,7 @@ export const phpLanguage = LRLanguage.define({
         "MethodDeclaration/Name": t.function(t.definition(t.variableName)),
         "FunctionDefinition/Name": t.function(t.definition(t.variableName)),
         "ClassDeclaration/Name": t.definition(t.className),
+        "self parent static $this": t.self,
         UpdateOp: t.updateOperator,
         ArithOp: t.arithmeticOperator,
         LogicOp: t.logicOperator,
@@ -64,6 +64,8 @@ export const phpLanguage = LRLanguage.define({
         "$ ConcatOp": t.operator,
         LineComment: t.lineComment,
         BlockComment: t.blockComment,
+        null: t.null,
+        Boolean: t.bool,
         Integer: t.integer,
         Float: t.float,
         String: t.string,
@@ -80,7 +82,7 @@ export const phpLanguage = LRLanguage.define({
   }),
   languageData: {
     commentTokens: {block: {open: "/*", close: "*/"}, line: "//"},
-    indentOnInput: /^\s*(?:case |default:|end(?:if|for(?:each)?|switch|while)|else(?:if)?|\{|\})$/,
+    indentOnInput: /^\s*(?:case |default:|end(?:if|for(?:each)?|switch|while)|match|else(?:if)?|\{|\})$/,
     wordChars: "$"
   }
 })
