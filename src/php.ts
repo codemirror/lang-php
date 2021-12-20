@@ -35,7 +35,7 @@ export const phpLanguage = LRLanguage.define({
         "endif endfor endforeach endswitch endwhile declare enddeclare goto match": t.controlKeyword,
         "and or xor yield unset clone instanceof insteadof": t.operatorKeyword,
         "function fn class trait implements extends const enum global namespace interface use var": t.definitionKeyword,
-        "include include_once require require_once declare enddeclare": t.definitionKeyword,
+        "include include_once require require_once": t.definitionKeyword,
         "new from echo print array list as": t.keyword,
         null: t.null,
         Boolean: t.bool,
