@@ -37,7 +37,6 @@ export const phpLanguage = LRLanguage.define({
         "function fn class interface trait implements extends const enum global namespace use var": t.definitionKeyword,
         "include include_once require require_once": t.definitionKeyword,
         "new from echo print array list as @ eval isset empty die exit __halt_compiler": t.keyword,
-        "__CLASS__  __DIR__  __FILE__  __FUNCTION__  __LINE__  __METHOD__  __NAMESPACE__  __TRAIT__": t.constant,
         VariableName: t.variableName,
         "NamespaceName/...": t.namespace,
         "NamedType/...": t.typeName,
