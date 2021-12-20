@@ -32,9 +32,9 @@ export const phpLanguage = LRLanguage.define({
       styleTags({
         "Visibility abstract final static": t.modifier,
         "for foreach while do if else elseif switch try catch finally return throw break continue default case": t.controlKeyword,
-        "endif endfor endforeach endswitch endwhile goto match": t.controlKeyword,
+        "endif endfor endforeach endswitch endwhile declare enddeclare goto match": t.controlKeyword,
         "and or xor yield unset clone instanceof insteadof": t.operatorKeyword,
-        "function fn class trait implements extends const enum global namespace trait use var": t.definitionKeyword,
+        "function fn class trait implements extends const enum global namespace interface use var": t.definitionKeyword,
         "include include_once require require_once declare enddeclare": t.definitionKeyword,
         "new from echo print array list as": t.keyword,
         null: t.null,
