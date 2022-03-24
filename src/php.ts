@@ -3,7 +3,6 @@ import {parseMixed} from "@lezer/common"
 import {html} from "@codemirror/lang-html"
 import {indentNodeProp, continuedIndent, delimitedIndent, foldNodeProp, foldInside,
         Language, LRLanguage, LanguageSupport} from "@codemirror/language"
-import {styleTags, tags as t} from "@codemirror/highlight"
 
 /// A language provider based on the [Lezer PHP
 /// parser](https://github.com/lezer-parser/php), extended with
@@ -28,53 +27,6 @@ export const phpLanguage = LRLanguage.define({
         "Block EnumBody DeclarationList SwitchBody ArrayExpression ValueList": foldInside,
         ColonBlock(tree) { return {from: tree.from + 1, to: tree.to} },
         BlockComment(tree) { return {from: tree.from + 2, to: tree.to - 2} }
-      }),
-      styleTags({
-        "Visibility abstract final static": t.modifier,
-        "for foreach while do if else elseif switch try catch finally return throw break continue default case": t.controlKeyword,
-        "endif endfor endforeach endswitch endwhile declare enddeclare goto match": t.controlKeyword,
-        "and or xor yield unset clone instanceof insteadof": t.operatorKeyword,
-        "function fn class trait implements extends const enum global interface use var": t.definitionKeyword,
-        "include include_once require require_once namespace": t.moduleKeyword,
-        "new from echo print array list as": t.keyword,
-        null: t.null,
-        Boolean: t.bool,
-        VariableName: t.variableName,
-        "NamespaceName/...": t.namespace,
-        "NamedType/...": t.typeName,
-        Name: t.name,
-        "CallExpression/Name": t.function(t.variableName),
-        "LabelStatement/Name": t.labelName,
-        "MemberExpression/Name": t.propertyName,
-        "MemberExpression/VariableName": t.special(t.propertyName),
-        "ScopedExpression/ClassMemberName/Name": t.propertyName,
-        "ScopedExpression/ClassMemberName/VariableName": t.special(t.propertyName),
-        "CallExpression/MemberExpression/Name": t.function(t.propertyName),
-        "CallExpression/ScopedExpression/ClassMemberName/Name": t.function(t.propertyName),
-        "MethodDeclaration/Name": t.function(t.definition(t.variableName)),
-        "FunctionDefinition/Name": t.function(t.definition(t.variableName)),
-        "ClassDeclaration/Name": t.definition(t.className),
-        UpdateOp: t.updateOperator,
-        ArithOp: t.arithmeticOperator,
-        LogicOp: t.logicOperator,
-        BitOp: t.bitwiseOperator,
-        CompareOp: t.compareOperator,
-        ControlOp: t.controlOperator,
-        AssignOp: t.definitionOperator,
-        "$ ConcatOp": t.operator,
-        LineComment: t.lineComment,
-        BlockComment: t.blockComment,
-        Integer: t.integer,
-        Float: t.float,
-        String: t.string,
-        ShellExpression: t.special(t.string),
-        "=> ->": t.punctuation,
-        "( )": t.paren,
-        "#[ [ ]": t.squareBracket,
-        "${ { }": t.brace,
-        "-> ?->": t.derefOperator,
-        ", ; :: : \\": t.separator,
-        "PhpOpen PhpClose": t.processingInstruction,
       })
     ]
   }),
