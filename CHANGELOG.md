@@ -1,3 +1,9 @@
+## 0.20.0 (2022-04-20)
+
+### Bug fixes
+
+Fix missing highlighting info for the `declare`, `enddeclare`, and `interface` keywords.
+
 ## 0.19.1 (2021-09-04)
 
 ### Bug fixes
