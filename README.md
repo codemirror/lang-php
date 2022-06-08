@@ -2,14 +2,14 @@
 
 # @codemirror/lang-php [![NPM version](https://img.shields.io/npm/v/@codemirror/lang-php.svg)](https://www.npmjs.org/package/@codemirror/lang-php)
 
-[ [**WEBSITE**](https://codemirror.net/6/) | [**ISSUES**](https://github.com/codemirror/codemirror.next/issues) | [**FORUM**](https://discuss.codemirror.net/c/next/) | [**CHANGELOG**](https://github.com/codemirror/lang-php/blob/main/CHANGELOG.md) ]
+[ [**WEBSITE**](https://codemirror.net/) | [**ISSUES**](https://github.com/codemirror/codemirror.next/issues) | [**FORUM**](https://discuss.codemirror.net/c/next/) | [**CHANGELOG**](https://github.com/codemirror/lang-php/blob/main/CHANGELOG.md) ]
 
 This package implements PHP language support for the
-[CodeMirror](https://codemirror.net/6/) code editor.
+[CodeMirror](https://codemirror.net/) code editor.
 
-The [project page](https://codemirror.net/6/) has more information, a
-number of [examples](https://codemirror.net/6/examples/) and the
-[documentation](https://codemirror.net/6/docs/).
+The [project page](https://codemirror.net/) has more information, a
+number of [examples](https://codemirror.net/examples/) and the
+[documentation](https://codemirror.net/docs/).
 
 This code is released under an
 [MIT license](https://github.com/codemirror/lang-php/tree/main/LICENSE).
@@ -23,14 +23,14 @@ to communication around the project.
 
 <dl>
 <dt id="user-content-php">
-  <code><strong><a href="#user-content-php">php</a></strong>(<a id="user-content-php^config" href="#user-content-php^config">config</a>&#8288;?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> = {}) → <a href="https://codemirror.net/6/docs/ref#language.LanguageSupport">LanguageSupport</a></code></dt>
+  <code><strong><a href="#user-content-php">php</a></strong>(<a id="user-content-php^config" href="#user-content-php^config">config</a>&#8288;?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> = {}) → <a href="https://codemirror.net/docs/ref#language.LanguageSupport">LanguageSupport</a></code></dt>
 
 <dd><p>PHP language support.</p>
 <dl><dt id="user-content-php^config">
   <code><strong><a href="#user-content-php^config">config</a></strong></code></dt>
 
 <dd><dl><dt id="user-content-php^config.baselanguage">
-  <code><strong><a href="#user-content-php^config.baselanguage">baseLanguage</a></strong>&#8288;?: <a href="https://codemirror.net/6/docs/ref#language.Language">Language</a></code></dt>
+  <code><strong><a href="#user-content-php^config.baselanguage">baseLanguage</a></strong>&#8288;?: <a href="https://codemirror.net/docs/ref#language.Language">Language</a></code></dt>
 
 <dd><p>By default, the parser will treat content outside of <code>&lt;?</code> and
 <code>?&gt;</code> markers as HTML. You can pass a different language here to
@@ -43,7 +43,7 @@ When you set this to true, it starts immediately at the start of
 the document.</p>
 </dd></dl></dd></dl></dd>
 <dt id="user-content-phplanguage">
-  <code><strong><a href="#user-content-phplanguage">phpLanguage</a></strong>: <a href="https://codemirror.net/6/docs/ref#language.LRLanguage">LRLanguage</a></code></dt>
+  <code><strong><a href="#user-content-phplanguage">phpLanguage</a></strong>: <a href="https://codemirror.net/docs/ref#language.LRLanguage">LRLanguage</a></code></dt>
 
 <dd><p>A language provider based on the <a href="https://github.com/lezer-parser/php">Lezer PHP
 parser</a>, extended with
