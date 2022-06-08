@@ -2,7 +2,7 @@
 
 # @codemirror/lang-php [![NPM version](https://img.shields.io/npm/v/@codemirror/lang-php.svg)](https://www.npmjs.org/package/@codemirror/lang-php)
 
-[ [**WEBSITE**](https://codemirror.net/) | [**ISSUES**](https://github.com/codemirror/codemirror.next/issues) | [**FORUM**](https://discuss.codemirror.net/c/next/) | [**CHANGELOG**](https://github.com/codemirror/lang-php/blob/main/CHANGELOG.md) ]
+[ [**WEBSITE**](https://codemirror.net/) | [**ISSUES**](https://github.com/codemirror/dev/issues) | [**FORUM**](https://discuss.codemirror.net/c/next/) | [**CHANGELOG**](https://github.com/codemirror/lang-php/blob/main/CHANGELOG.md) ]
 
 This package implements PHP language support for the
 [CodeMirror](https://codemirror.net/) code editor.
