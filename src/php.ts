@@ -20,7 +20,7 @@ export const phpLanguage = LRLanguage.define({
         ColonBlock: cx => cx.baseIndent + cx.unit,
         "Block EnumBody DeclarationList": delimitedIndent({closing: "}"}),
         ArrowFunction: cx => cx.baseIndent + cx.unit,
-        "String BlockComment": () => -1,
+        "String BlockComment": () => null,
         Statement: continuedIndent({except: /^({|end(for|foreach|switch|while)\b)/})
       }),
       foldNodeProp.add({
