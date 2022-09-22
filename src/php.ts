@@ -33,7 +33,8 @@ export const phpLanguage = LRLanguage.define({
   languageData: {
     commentTokens: {block: {open: "/*", close: "*/"}, line: "//"},
     indentOnInput: /^\s*(?:case |default:|end(?:if|for(?:each)?|switch|while)|else(?:if)?|\{|\})$/,
-    wordChars: "$"
+    wordChars: "$",
+    closeBrackets: {stringPrefixes: ["b", "B"]}
   }
 })
 
