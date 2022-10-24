@@ -8,6 +8,7 @@ import {indentNodeProp, continuedIndent, delimitedIndent, foldNodeProp, foldInsi
 /// parser](https://github.com/lezer-parser/php), extended with
 /// highlighting and indentation information.
 export const phpLanguage = LRLanguage.define({
+  name: "php",
   parser: parser.configure({
     props: [
       indentNodeProp.add({
