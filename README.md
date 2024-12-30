@@ -19,6 +19,19 @@ we have a [code of
 conduct](http://contributor-covenant.org/version/1/1/0/) that applies
 to communication around the project.
 
+## Usage
+
+```javascript
+import {EditorView, basicSetup} from "codemirror"
+import {php} from "@codemirror/lang-php"
+
+const view = new EditorView({
+  parent: document.body,
+  doc: `<? echo "Hello world" ?>`,
+  extensions: [basicSetup, php()]
+})
+```
+
 ## API Reference
 
 <dl>
