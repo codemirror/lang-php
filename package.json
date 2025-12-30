@@ -37,6 +37,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codemirror/lang-php.git"
+    "url": "git+https://github.com/codemirror/lang-php.git"
   }
 }
